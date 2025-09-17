@@ -14,8 +14,7 @@ int main()
     char cartaEstadoA[1], cartaEstadoB[1];
     char nomePaisA[50], nomePaisB[50];
     double pibA, pibB, areaA, areaB, populacaoA, populacaoB;
-    
-
+ 
         // Cadastro das Cartas:
         // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
         // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
@@ -72,7 +71,9 @@ int main()
     float PibPerCapitaA = pibA/populacaoA;
     float PibPerCapitaB = pibB/populacaoB;
 
-    // Exibição dos Dados das Cartas:
+    float a =PibPerCapitaA+populacaoA+densidadePopulacionalA+pontoTuristicoA;
+    float b =PibPerCapitaB+populacaoB+densidadePopulacionalB+pontoTuristicoB;
+    float resultado; 
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
     printf("\n--- Carta 1 ---\n");
@@ -85,6 +86,7 @@ int main()
     printf("Area do Pais: %.2lf\n", areaA);
     printf("Densidade Populacional Do Pais: %.2lf\n", densidadePopulacionalA);
     printf("Pib Da Populaçao : %.2lf\n", PibPerCapitaA);
+    printf("A soma dos poderes e de %.2f\n", a);
     printf("\n--- Carta 2 ---\n");
     printf("Estado: %s\n", cartaEstadoB);
     printf("Nome do pais: %s\n", nomePaisB);
@@ -95,7 +97,23 @@ int main()
     printf("Area do Pais: %.2lf\n", areaB);
     printf("Densidade Populacional Do Pais: %.2lf\n", densidadePopulacionalB);
     printf("Pib Da Populaçao : %.2lf\n", PibPerCapitaB);
+    printf("A soma dos poderes e de %.2f\n", b);
+    
+
+              //super poder :
+             // Comparação
+    printf("\n--- Resultado da Comparação ---\n");
+
+    printf("pontoTuristicoA > pontoTuristicoB : %d\n" , pontoTuristicoA > pontoTuristicoB );
+    printf("populacaoA > populacaoB : %d\n" , populacaoA > populacaoB );
+    printf("pibA > pibB : %d\n" , pibA > pibB );
+    printf("areaA > areaB : %d\n" , areaA > areaB );
+    printf("densidadePopulacionalA > densidadePopulacionalB : %d\n" , densidadePopulacionalA > densidadePopulacionalB );
+    printf("PibPerCapitaA > PibPerCapitaB : %d\n" , PibPerCapitaA > PibPerCapitaB );
+
+        printf("\n---FIM---\n");
+   
+       
     return 0;
 
 }
-
