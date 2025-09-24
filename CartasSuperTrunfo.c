@@ -98,7 +98,7 @@ int main()
     printf("Densidade Populacional Do Pais: %.2lf\n", densidadePopulacionalB);
     printf("Pib Da Populaçao : %.2lf\n", PibPerCapitaB);
     printf("A soma dos poderes e de %.2f\n", b);
-    
+   
 
               //super poder :
              // Comparação
@@ -111,8 +111,15 @@ int main()
     printf("densidadePopulacionalA > densidadePopulacionalB : %d\n" , densidadePopulacionalA > densidadePopulacionalB );
     printf("PibPerCapitaA > PibPerCapitaB : %d\n" , PibPerCapitaA > PibPerCapitaB );
 
-        printf("\n---FIM---\n");
-   
+  
+        if (pontoTuristicoA > pontoTuristicoB){
+        printf("carta1: tem maior percentual de dano que a carta2 \n");
+         }else{
+            printf("carta2: tem maior percentual de dano que a carta1 \n");
+            
+        }
+        
+             printf("\n---FIM---\n");
        
     return 0;
 
