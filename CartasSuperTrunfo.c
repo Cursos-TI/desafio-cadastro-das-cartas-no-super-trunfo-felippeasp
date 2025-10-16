@@ -14,15 +14,14 @@ int main()
     char cartaEstadoA[1], cartaEstadoB[1];
     char nomePaisA[50], nomePaisB[50];
     double pibA, pibB, areaA, areaB, populacaoA, populacaoB;
-    
 
-        // Cadastro das Cartas:
-        // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-        // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
+    // Cadastro das Cartas:
+    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
+    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
 
     printf("Carta 1 \n");
     printf("Digite o nome do pais da Carta 1: \n");
-    scanf("%s", nomePaisA); 
+    scanf("%s", nomePaisA);
 
     printf("Digite o codigo da cidade da carta 1: \n");
     scanf("%d", &codCidadeA);
@@ -31,7 +30,7 @@ int main()
     scanf("%d", &pontoTuristicoA);
 
     printf("Digite a População da carta 1: \n");
-    scanf("%lf", &populacaoA); 
+    scanf("%lf", &populacaoA);
 
     printf("Digite o PIB da carta 1: \n");
     scanf("%lf", &pibA);
@@ -40,13 +39,13 @@ int main()
     scanf("%s", &cartaEstadoA);
 
     printf("Digite o area da carta 1: \n");
-    scanf("%lf", &areaA); 
+    scanf("%lf", &areaA);
 
     printf("---FIM--");
     printf("Carta 2 \n");
 
     printf("Digite o nome do pais da Carta 2: \n");
-    scanf("%s", nomePaisB); 
+    scanf("%s", nomePaisB);
 
     printf("Digite o codigo da cidade da carta 2: \n");
     scanf("%d", &codCidadeA);
@@ -55,7 +54,7 @@ int main()
     scanf("%d", &pontoTuristicoB);
 
     printf("Digite a População da carta 2: \n");
-    scanf("%lf", &populacaoB); 
+    scanf("%lf", &populacaoB);
 
     printf("Digite o PIB da carta 2: \n");
     scanf("%lf", &pibB);
@@ -64,15 +63,17 @@ int main()
     scanf("%s", &cartaEstadoB);
 
     printf("Digite o area da carta 2: \n");
-    scanf("%lf", &areaB); 
+    scanf("%lf", &areaB);
 
-    float densidadePopulacionalA = populacaoA/areaA;
-    float densidadePopulacionalB = populacaoB/areaB;
+    float densidadePopulacionalA = populacaoA / areaA;
+    float densidadePopulacionalB = populacaoB / areaB;
 
-    float PibPerCapitaA = pibA/populacaoA;
-    float PibPerCapitaB = pibB/populacaoB;
+    float PibPerCapitaA = pibA / populacaoA;
+    float PibPerCapitaB = pibB / populacaoB;
 
-    // Exibição dos Dados das Cartas:
+    float a = PibPerCapitaA + populacaoA + densidadePopulacionalA + pontoTuristicoA;
+    float b = PibPerCapitaB + populacaoB + densidadePopulacionalB + pontoTuristicoB;
+    float resultado;
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
     printf("\n--- Carta 1 ---\n");
@@ -85,6 +86,7 @@ int main()
     printf("Area do Pais: %.2lf\n", areaA);
     printf("Densidade Populacional Do Pais: %.2lf\n", densidadePopulacionalA);
     printf("Pib Da Populaçao : %.2lf\n", PibPerCapitaA);
+    printf("A soma dos poderes e de %.2f\n", a);
     printf("\n--- Carta 2 ---\n");
     printf("Estado: %s\n", cartaEstadoB);
     printf("Nome do pais: %s\n", nomePaisB);
@@ -95,7 +97,94 @@ int main()
     printf("Area do Pais: %.2lf\n", areaB);
     printf("Densidade Populacional Do Pais: %.2lf\n", densidadePopulacionalB);
     printf("Pib Da Populaçao : %.2lf\n", PibPerCapitaB);
+    printf("A soma dos poderes e de %.2f\n", b);
+
+    // super poder :
+    // Comparação
+    printf("\n--- Resultado da Comparação ---\n");
+
+    printf("pontoTuristicoA > pontoTuristicoB : %d\n", pontoTuristicoA > pontoTuristicoB);
+    printf("populacaoA > populacaoB : %d\n", populacaoA > populacaoB);
+    printf("pibA > pibB : %d\n", pibA > pibB);
+    printf("areaA > areaB : %d\n", areaA > areaB);
+    printf("densidadePopulacionalA > densidadePopulacionalB : %d\n", densidadePopulacionalA > densidadePopulacionalB);
+    printf("PibPerCapitaA > PibPerCapitaB : %d\n", PibPerCapitaA > PibPerCapitaB);
+
+    printf("\n---FIM---\n");
+
+    if (pontoTuristicoA > pontoTuristicoB)
+    {
+        printf("carta1: tem maior percentual de dano que a carta2 \n");
+    }
+    else
+    {
+        printf("carta2: tem maior percentual de dano que a carta1 \n");
+    }
+
+    int opcao;
+    int numeroSecreto, palpite;
+
+    printf("Menu Principal\n");
+    printf("1.Comparar por populacao\n");
+    printf("2. comparar por ponto turistico\n");
+    printf("3. comparar por pib\n");
+    printf("Escolha uma opção: \n");
+    scanf("%d", &opcao);
+
+    switch (opcao)
+    {
+    case 1:
+        if (populacaoA > populacaoB)
+        {
+
+            printf("A populaçao da carta A venceu\n");
+        }
+        else if (populacaoB > populacaoA)
+
+        {
+            printf("A populaçao da carta B venceu\n");
+        }
+        else
+        {
+            printf("AS CARTAS TEM O MESMO VALOR!!\n");
+        }
+
+        break;
+
+    case 2:
+        if (pontoTuristicoA > pontoTuristicoB)
+        {
+            printf("O PONTO TURISTICO DA CARTA A VENCEU\n");
+        }
+        else if (pontoTuristicoB > pontoTuristicoA)
+        {
+            printf("O PONTO TURISTICO DA CARTA B VENCEU\n");
+        }
+        else
+        {
+            printf("OS PONTOS TURISTICOS TEM O MESMO VALO\n");
+        }
+        break;
+
+    case 3:
+        if (pibA > pibB)
+        {
+            printf("pibA tem a pontuaçao maior que a carta B\n");
+        }
+        else if (pibB > pibA)
+        {
+            printf("pibB tem a pontuaçao maior que a carta A\n");
+        }
+        else
+        {
+            printf("OS PIBS TEM O MESMO VALOR !!!\n");
+        }
+        break;
+
+    default:
+        printf("Opção inválida. Tente novamente.\n");
+        break;
+    }
+
     return 0;
-
 }
-
